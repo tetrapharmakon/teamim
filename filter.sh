@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 grep -o "[.,;:?\!]" $1 | tr -d "\n" > $1.intpunct
 #      |             |       |
 #      |             |       |

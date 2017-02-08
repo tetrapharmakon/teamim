@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 echo "\documentclass[margin=2mm]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{calc}
