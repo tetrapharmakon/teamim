@@ -9,22 +9,24 @@ echo "\documentclass[margin=2mm]{standalone}
 
 sym=`grep -o "[.,;:?\!]" babel.txt | tr -d "\n" | sed -e 's/\(.\)/\1 /g'`
 ar=( $sym )
+j=1
 for i in "${ar[@]}"
 do
 case $i in
-	"?") echo "-- +(60:1)" >> dirs.tex
+	"?") echo "-- +(60:$j)" >> dirs.tex
 		;;
-	"!") echo "-- +(-120:1)" >> dirs.tex
+	"!") echo "-- +(-120:$j)" >> dirs.tex
 		;;
-	".") echo "-- +(0:1)" >> dirs.tex
+	".") echo "-- +(0:$j)" >> dirs.tex
 		;;
-	",") echo "-- +(180:1)" >> dirs.tex
+	",") echo "-- +(180:$j)" >> dirs.tex
 		;;
-	";") echo "-- +(-60:1)" >> dirs.tex
+	";") echo "-- +(-60:$j)" >> dirs.tex
 		;;
-	":") echo "-- +(120:1)" >> dirs.tex
+	":") echo "-- +(120:$j)" >> dirs.tex
 		;;
 esac
+((j++))
 done
 echo ";
 \end{tikzpicture}
