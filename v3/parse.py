@@ -33,7 +33,6 @@ punctuation = re.sub('[^,;:.!?]', '', text)
 output = open(ARGS.output, 'w')
 output.write(str(0)+"\t1\n")
 
-
 angle = 0
 turtle = numpy.array([0.0,1.0])
 
@@ -53,13 +52,5 @@ for sign in punctuation:
       angle = a
 
     output.write(str(turtle[0])+"\t"+str(turtle[1])+"\n")
-
-
-
-
-
-
-
-
 
 output.close()
